@@ -99,8 +99,8 @@ body {
     width: max-content;
     /* border: 1px solid #d58905; */
     border-radius: 50%;
-    width: 150px;
-    height: 125px;
+    width: 165px;
+    height: 165px;
     position: relative;
 }
 
@@ -122,7 +122,7 @@ body {
     left: 15px;
 }
 .banner_names h1 {
-    font-size: 32px;
+    font-size: 38px;
     align-self: center;
     text-align: center;
     /* font-family: "Sail", system-ui; */
@@ -227,9 +227,9 @@ main section .ceremonies button {
 }
 
 section.galery {
-    /* background: #000; */
+    background: #15120e;
     padding-block: 1rem;
-    /* color: white; */
+    color: white;
 }
 section.galery h3 {
     padding-block: 2rem;
