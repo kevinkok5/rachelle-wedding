@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", cursive;
+    /* background: #fff7f7; */
+}
+
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 8px;
+}
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
+
+.separator {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.image-parent {
+    max-width: 380px;
+    /* width: 100vw; */
+    max-height: 700px;
+    height: 55vh;
+    /* border-radius: 0 0 35% 35%; */
+    overflow: hidden;
+    position: relative;
+}
+
+.image-parent img {
+    width: 380px;
+    /* height: 700px; */
+    object-fit: cover;
+    top: -30px;
+    position: absolute;
+}
+
+.image-parent svg {
+    position: absolute;
+    bottom: -20px;
+    /* border: 1px solid; */
+    z-index: 1;
+    width: 100%;
+}
+
+.Banner_text p {
+    font-size: 15px;
+}
+.Banner_text p:first-child {
+    padding-block: 1.6rem;
+}
+
+.Banner_text h3 {
+    font-size: 16px;
+    font-family: "Sail", system-ui;
+    color: #d58905;
+    padding-bottom: 0.4rem;
+}
+
+.banner_names {
+    /* background: #b34242; */
+    height: fit-content;
+    padding-block: 36px;
+    margin-top: 2rem;
+    justify-content: space-around;
+    width: max-content;
+    /* border: 1px solid #d58905; */
+    border-radius: 50%;
+    width: 150px;
+    height: 125px;
+    position: relative;
+}
+
+.banner_names svg {
+    top: 0;
+}
+
+.banner_names .separator {
+    background: #d58905;
+}
+
+.banner_names h3,
+.banner_names h1 {
+    color: #d58905;
+    /* position: absolute; */
+}
+.banner_names h3 {
+    top: 30px;
+    left: 15px;
+}
+.banner_names h1 {
+    font-size: 32px;
+    align-self: center;
+    text-align: center;
+    /* font-family: "Sail", system-ui; */
+    font-family: "Pinyon Script", cursive;
+
+    font-weight: 700;
+    font-style: normal;
+    /* bottom: 80px;
+    right: 40px; */
+}
+
+.welcome-text {
+    font-size: 16px;
+    font-style: normal;
+    max-width: 400px;
+    font-weight: 600;
+}
+
+main section .date {
+    padding-block: 1.2rem;
+}
+main section .date div {
+    padding-block: 8px;
+    padding-inline: 18px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    font-size: 18px;
+}
+
+main section .date h2 {
+    font-size: 32px;
+    margin-top: 20px;
+}
+main section .date h2 span {
+    font-size: 16px;
+}
+
+main section .ceremonies.blessing {
+    /* background-color: rgb(255, 253, 249); */
+    padding-block: 1.5rem;
+}
+main section .ceremonies svg {
+    margin-bottom: 0.4rem;
+}
+main section .ceremonies h3 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+main section .ceremonies p {
+    font-size: 15px;
+}
+main section .ceremonies.reception {
+    /* background-color: rgb(255, 253, 249); */
+    padding-bottom: 1.5rem;
+}
+main section .ceremonies button {
+    padding: 12px 45px;
+    font-size: 15px;
+    background: #000;
+    color: #f1bb5d;
+    font-weight: bold;
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    margin-block: 2rem;
+}
+
+.dress_code {
+    padding-block: 1.8rem;
+}
+
+.dress_code .colours {
+    gap: 1rem;
+    margin-block: 0.8rem;
+}
+.dress_code .colours div {
+    background: #f59a12;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1\\pxsolidblack;
+}
+
+.rsvp {
+    /* background: #000; */
+    /* color: white; */
+    padding-block: 1rem;
+}
+
+.rsvp button {
+    background: white;
+    border: 2px solid #f59a12;
+    padding: 12px 45px;
+    font-size: 15px;
+    /* background: #000; */
+    color: #f1bb5d;
+    font-weight: bold;
+    border-radius: 24px;
+    /* border: none; */
+    outline: none;
+    margin-block: 2rem;
+}
+
+section.galery {
+    /* background: #000; */
+    padding-block: 1rem;
+    /* color: white; */
+}
+section.galery h3 {
+    padding-block: 2rem;
+}
+section.galery .galery_pictures {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.4rem;
+    /* background-color: rgb(51, 255, 0); */
+}
+
+section.galery .galery_pictures .image-parent {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    /* padding: 4; */
+    /* gap: 2rem; */
+    /* background-color: red; */
+    height: unset;
+}
+
+section.galery .galery_pictures .image-parent img {
+    width: 100%;
+    height: inherit;
+    /* display: none; */
+}
