@@ -9,6 +9,8 @@
 body {
     font-family: "Poppins", cursive;
     /* background: #fff7f7; */
+    margin: auto;
+    max-width: 420px;
 }
 
 .container {
