@@ -89,11 +89,21 @@ body {
     width: 100%;
 }
 
+.Banner_text {
+    /* background: #000; */
+}
+
+.Banner_text .you_are_invited {
+    font-size: 18px;
+    font-weight: 500;
+    padding-block: 1.8rem;
+}
 .Banner_text p {
     font-size: 15px;
 }
 .Banner_text p {
-    padding: 1.6rem 1rem;
+    padding-inline: 1rem;
+    padding-bottom: 1.8rem;
 }
 
 .Banner_text h3 {
@@ -166,11 +176,12 @@ main section .date div {
 }
 
 main section .date h2 {
-    font-size: 32px;
+    font-size: 40px;
     margin-top: 20px;
 }
 main section .date h2 span {
     font-size: 16px;
+    font-family: "Pinyon Script", cursive;
 }
 
 main section .ceremonies.blessing {
@@ -186,6 +197,10 @@ main section .ceremonies h3 {
 }
 main section .ceremonies p {
     font-size: 15px;
+}
+main section .ceremonies p span {
+    font-size: 16px;
+    font-weight: 500;
 }
 main section .ceremonies.reception {
     /* background-color: rgb(255, 253, 249); */
@@ -212,11 +227,28 @@ main section .ceremonies button {
     margin-block: 0.8rem;
 }
 .dress_code .colours div {
-    background: #f59a12;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1\\pxsolidblack;
+    border: 1px solid gray;
+}
+.dress_code .colours div:nth-child(4) {
+    background: #433a35;
+}
+.dress_code .colours div:first-child {
+    background: #252525;
+}
+.dress_code .colours div:nth-child(3) {
+    background: #f9f4ee;
+}
+.dress_code .colours div:nth-child(2) {
+    background: #c5b59e;
+}
+/* .dress_code .colours div:nth-child() {
+    background: #433a35;
+} */
+.dress_code .colours div:nth-child(5) {
+    background: gray;
 }
 
 .rsvp {
@@ -227,11 +259,11 @@ main section .ceremonies button {
 
 .rsvp button {
     background: white;
-    border: 2px solid #f59a12;
+    border: 2px solid #b66e02;
     padding: 12px 45px;
     font-size: 15px;
     /* background: #000; */
-    color: #f1bb5d;
+    color: #b66e02;
     font-weight: bold;
     border-radius: 24px;
     /* border: none; */
