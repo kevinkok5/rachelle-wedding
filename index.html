@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <div class="message_popup" id="messagePopup">Sending...</div>
         <header>
             <div class="banner">
                 <div class="image-parent">
@@ -145,7 +146,10 @@
             </div>
 
             <div class="flex flex-col items-center Banner_text">
-                <p>With the blessing of God and our parents</p>
+                <p class="text-center">
+                    You are invited to the wedding of Paul Konda and
+                    Rachelle Disashi
+                </p>
                 <h3 class="">Proverbs 18: 22</h3>
                 <p class="text-center">
                     "He who finds a wife, finds what is good and receives favour
@@ -157,7 +161,8 @@
             <section class="container">
                 <!-- <div class="flex justify-center welcome-text">
                     <p class="text-center">
-                        WE ARE WAITING FOR YOU TO CELEBRATE THE DAY TOGETHER
+                        WE ARE WAITING FOR YOU TO 
+                        CELEBRATE THE DAY TOGETHER
                     </p>
                 </div> -->
                 <div class="flex justify-center items-center date">
@@ -327,7 +332,12 @@
                         <p>
                             <span>12:00 H</span> - Jasmine hills country venue
                         </p>
-                        <button>View map</button>
+                        <a
+                            href="https://maps.app.goo.gl/EB39dEmkVbtvadEZ8?g_st=ipc"
+                            target="_blank"
+                        >
+                            <button>View map</button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex flex-col items-center reception ceremonies">
@@ -377,7 +387,12 @@
                         <p>
                             <span>17:00 H</span> - Jasmine hills country venue
                         </p>
-                        <button>View map</button>
+                        <a
+                            href="https://maps.app.goo.gl/EB39dEmkVbtvadEZ8?g_st=ipc"
+                            target="_blank"
+                        >
+                            <button>View map</button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -416,10 +431,47 @@
                             Your presence is our best gift. Please let us know
                             if you are coming so we can save a spot for you
                         </p>
-                        <button>RSVP</button>
+                        <button class="rsvp-button" id="openPopupBtn">
+                            RSVP
+                        </button>
                     </div>
                 </div>
             </section>
+
+            <div class="popup-overlay" id="popupOverlay">
+                <div class="popup-content">
+                    <span class="close-btn" id="closePopupBtn">&times;</span>
+                    <h2>Wedding RSVP</h2>
+                    <form id="rsvpForm">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required />
+
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required />
+
+                        <label class="flex items-center">
+                            <input
+                                type="radio"
+                                name="attending"
+                                value="Yes"
+                                required
+                            />
+                            Yes I will attend the wedding
+                        </label>
+                        <label class="flex items-center">
+                            <input
+                                type="radio"
+                                name="attending"
+                                value="No"
+                                required
+                            />
+                            No I won't attend the wedding
+                        </label>
+
+                        <button type="submit">Submit RSVP</button>
+                    </form>
+                </div>
+            </div>
 
             <section class="venue-and-time container galery">
                 <h3 class="flex justify-center">GALERY</h3>
@@ -454,5 +506,87 @@
                 </div>
             </section>
         </main>
+
+        <script>
+            const openBtn = document.getElementById("openPopupBtn");
+            const closeBtn = document.getElementById("closePopupBtn");
+            const overlay = document.getElementById("popupOverlay");
+            const form = document.getElementById("rsvpForm");
+            const messagePopup = document.getElementById("messagePopup");
+
+            function disableScroll() {
+                document.body.classList.add("stop-scrolling");
+            }
+
+            function enableScroll() {
+                document.body.classList.remove("stop-scrolling");
+            }
+
+            openBtn.addEventListener("click", () => {
+                overlay.style.display = "flex";
+                disableScroll();
+            });
+
+            closeBtn.addEventListener("click", () => {
+                overlay.style.display = "none";
+                enableScroll();
+            });
+
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) {
+                    overlay.style.display = "none";
+                }
+                enableScroll();
+            });
+
+            const endpoint =
+                "https://script.google.com/macros/s/AKfycbwWUlnVHw4EbmRDHm5MhnytCzbk4nhBa7MHuLo2jOlg5hKT6ayq_YEy6C37ssZ-cXgy/exec";
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                messagePopup.style.display = "block";
+
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const attending = form.attending.value.trim();
+
+                // Simulate sending to server
+                console.log("RSVP Submitted", { name, email, attending });
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: new URLSearchParams({
+                            Name: name,
+                            Email: email,
+                            Attending: attending,
+                            // "Appointment Date": formData.appointmentDate,
+                            // "Appointment Time": formData.appointmentTime,
+                        }),
+                    });
+                    const result = await response.json();
+                    if (result.result === "success") {
+                        alert("Thank you! Your RSVP has been recorded.");
+                        form.reset();
+                        overlay.style.display = "none";
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                        // console.error(result.error);
+                    }
+                } catch (err) {
+                    // console.error("Error:", err);
+                    // alert("Failed to submit RSVP.");
+                } finally {
+                    messagePopup.innerText = "Submitted✅";
+                    setTimeout(() => {
+                        messagePopup.style.display = "none";
+                    }, 1500);
+                    overlay.style.display = "none";
+                }
+            });
+        </script>
     </body>
 </html>
