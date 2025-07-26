@@ -99,7 +99,7 @@ body {
     padding-block: 1.8rem;
 }
 .Banner_text p {
-    font-size: 15px;
+    font-size: 16px;
 }
 .Banner_text p {
     padding-inline: 1rem;
@@ -196,10 +196,10 @@ main section .ceremonies h3 {
     margin-bottom: 1rem;
 }
 main section .ceremonies p {
-    font-size: 15px;
+    font-size: 16px;
 }
 main section .ceremonies p span {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
 }
 main section .ceremonies.reception {
@@ -208,7 +208,7 @@ main section .ceremonies.reception {
 }
 main section .ceremonies button {
     padding: 12px 45px;
-    font-size: 15px;
+    font-size: 16px;
     background: #000;
     color: #f1bb5d;
     font-weight: bold;
