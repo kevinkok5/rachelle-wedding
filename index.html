@@ -448,8 +448,18 @@
                         <label for="name">Full Name:</label>
                         <input type="text" id="name" name="name" required />
 
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required />
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            minlength="10"
+                            maxlength="15"
+                            required
+                        />
+
+                        <label for="email">Email Address(Optional):</label>
+                        <input type="email" id="email" name="email" />
 
                         <label class="flex items-center">
                             <input
@@ -476,7 +486,7 @@
             </div>
 
             <section class="venue-and-time container galery">
-                <h3 class="flex justify-center">GALERY</h3>
+                <h3 class="flex justify-center">GALLERY</h3>
                 <div class="galery_pictures">
                     <div class="image-parent">
                         <img src="./images/rachel 2.jpg" alt="" />
@@ -551,6 +561,7 @@
                 const name = form.name.value.trim();
                 const email = form.email.value.trim();
                 const attending = form.attending.value.trim();
+                const phoneNumber = form.phoneNumber.value.trim();
 
                 // Simulate sending to server
                 console.log("RSVP Submitted", { name, email, attending });
@@ -565,6 +576,7 @@
                             Name: name,
                             Email: email,
                             Attending: attending,
+                            "Phone Number": phoneNumber,
                             // "Appointment Date": formData.appointmentDate,
                             // "Appointment Time": formData.appointmentTime,
                         }),

@@ -341,6 +341,7 @@ section.galery .galery_pictures .image-parent img {
 .popup-content h2 {
     margin-top: 0;
     text-align: center;
+    margin-bottom: 14px;
 }
 
 .popup-content label {
@@ -348,12 +349,20 @@ section.galery .galery_pictures .image-parent img {
     gap: 0.4rem;
 }
 
+/* .popup-content input {
+    margin-bottom: 10px;
+} */
+
 .popup-content input[type="text"],
-.popup-content input[type="email"] {
+.popup-content input[type="email"],
+.popup-content input[type="tel"] {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .popup-content button[type="submit"] {
@@ -375,6 +384,7 @@ section.galery .galery_pictures .image-parent img {
     font-size: 22px;
     cursor: pointer;
     color: #999;
+    font-weight: 600;
 }
 
 .close-btn:hover {
